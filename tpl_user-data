@@ -1,0 +1,5 @@
+#cloud-config
+password: publicpass
+ssh_pwauth: True
+ssh_authorized_keys:
+  - ssh-rsa KEY

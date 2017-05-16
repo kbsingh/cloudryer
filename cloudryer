@@ -1,0 +1,12 @@
+#!/bin/bash
+
+yum -y install openssh genisoimage
+
+bash genConfigDrive.sh
+
+qemu-kvm -m 1024 -name locally \
+  -hda ${1} \
+  -cdrom configdrive.iso \
+  -netdev bridge,br=virbr0,id=net0 -device virtio-net-pci,netdev=net0 \
+  -display sdl
+
