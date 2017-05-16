@@ -1,6 +1,6 @@
 #!/bin/bash
 
-yum -y install openssh genisoimage
+sudo yum -y install openssh genisoimage
 
 bash genConfigDrive.sh
 
